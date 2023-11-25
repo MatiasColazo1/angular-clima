@@ -1,0 +1,26 @@
+<div class="container p-4">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card card-body">
+        <form (submit)="submitLocation(ciudad, pais)">
+          <input type="text" class="form-control mb-3" placeholder="Nombe de la Ciudad" #ciudad>
+          <input type="text" class="form-control mb-3" placeholder="Codigo del Pais" #pais>
+          <button class="btn btn-primary" >
+            Obtener Clima
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="clima" class="card card-body">
+        <p>Ciudad: {{clima.name}}</p>
+        <p>Temperatura: {{clima.main.temp}} °C</p>
+        <p>Temperatura Mínima: {{clima.main.temp_min}} °C</p>
+        <p>Temperatura Máxima: {{clima.main.temp_max}} °C</p>
+        <p>Humedad: {{clima.main.humidity}}</p>
+        <p>Presión: {{clima.main.pressure}}</p>
+        <p>Descripción: {{clima.weather[0].description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
