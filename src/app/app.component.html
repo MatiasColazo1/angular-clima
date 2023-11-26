@@ -1,10 +1,19 @@
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container">
+    <a href="https://matias.dev.ar/" target="_blank" class="navbar-brand text-body-emphasis">Aplicación del Clima</a>
+    </div>
+</nav>
+
 <div class="container p-4">
   <div class="row">
     <div class="col-md-6">
-      <div class="card card-body">
+      <div class="card card-body border-primary ">
+        <div class="d-flex justify-content-center align-items-center">
+          <img src="../assets/Angular_full_color_logo.svg.png" width="190px">
+        </div>
         <form (submit)="submitLocation(ciudad, pais)">
-          <input type="text" class="form-control mb-3" placeholder="Nombe de la Ciudad" #ciudad>
-          <input type="text" class="form-control mb-3" placeholder="Codigo del Pais" #pais>
+          <input type="text" class="form-control mb-3" placeholder="Nombe de la Ciudad, Ej: Rosario" #ciudad>
+          <input type="text" class="form-control mb-3" placeholder="Codigo del Pais, Ej: AR" #pais>
           <button class="btn btn-primary" >
             Obtener Clima
           </button>
@@ -12,7 +21,7 @@
       </div>
     </div>
     <div class="col-md-6">
-      <div *ngIf="clima" class="card card-body">
+      <div *ngIf="clima" class="card card-body border-primary">
         <p>Ciudad: {{clima.name}}</p>
         <p>Temperatura: {{clima.main.temp}} °C</p>
         <p>Temperatura Mínima: {{clima.main.temp_min}} °C</p>
